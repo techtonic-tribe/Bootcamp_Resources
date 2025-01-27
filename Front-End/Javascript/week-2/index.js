@@ -27,7 +27,7 @@
 
 
 // const arr = [1, 2, 3, 4, 5, 6, 7, 8]
-const arr = [10, 2, 13, 4, 5, 16, 7, 8]
+// const arr = [10, 2, 13, 4, 5, 16, 7, 8]
 
 // let sum =0
 // const double = (i) => {
@@ -124,5 +124,7 @@ const arr = [10, 2, 13, 4, 5, 16, 7, 8]
 //   for(const [first, third] of fullStack) {
 //   console.log(first, third)
 //   }
+
+
 
 
