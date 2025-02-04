@@ -1,0 +1,15 @@
+.click{
+    background-color: black;
+    color: greenyellow;
+    font-weight: bolder;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 16px;
+    box-shadow:solid 5px 5px ;
+    transition:ease-in-out;
+}
+
+.click:active{
+    background-color: greenyellow;
+    color: black;
+}
