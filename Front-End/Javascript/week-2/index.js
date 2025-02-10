@@ -19,15 +19,38 @@
 //   }
 //   console.log(higherOrder(2)(3)(10))
 
+
+
+
 // const sayHello = () => {
 //     console.log(" hello world")
 // }
+// sayHello()
+// setInterval (sayHello , 1000) 
 
-// setTimeout (sayHello , 2000) 
 
+// let numbers = [10, 20, 30, 40, 50];
+// let total = 0;
+// let index = 0;
+
+// function addAndDisplay() {
+//     if (index < numbers.length) {
+//         total += numbers[index];
+//         console.log(` ${total}`);
+//         index++;
+//     } else {
+//         console.log("All items processed. Final Total: " + total);
+//         clearInterval(intervalId)
+//     }
+// }
+
+// // setInterval(addAndDisplay, 1000);
+// let intervalId = setInterval(addAndDisplay, 1000);
+
+// variable_name.forEach()
 
 // const arr = [1, 2, 3, 4, 5, 6, 7, 8]
-// const arr = [10, 2, 13, 4, 5, 16, 7, 8]
+const arr = [10, 2, 13, 4, 5, 16, 7, 8]
 
 // let sum =0
 // const double = (i) => {
@@ -58,7 +81,7 @@
 // const capNames = names.map((name)=> name.toUpperCase())
 // console.log (capNames)
 
-// const filterdNames = names.filter((name)=> name.includes("x"))
+// const filterdNames = names.filter((name)=> name.includes("o"))
 // const filterdNames = names.filter((name)=> name.endsWith("h"))
 // const filterdNames = names.filter((name)=> name.startsWith("M"))
 // const filterdNames = names.filter((name)=> name.length == 5)
@@ -69,7 +92,7 @@
 // console.log(sum)
 
 // const newArr = arr.every((i) => typeof(i) === "number")
-// const newArr = arr.some((i) => typeof(i) === "number")
+// const newArr = arr.some((i) => typeof(i) === "string")
 // console.log(newArr)
 
 // const age = arr.find((age) => age < 5)
@@ -78,7 +101,7 @@
 
 // console.log(arr.sort()) 
 // arr.sort(function (a, b) {
-//   return b - a
+//   return a - b
 // })
 // console.log(arr)
 
@@ -91,28 +114,28 @@
 // companies.forEach((i) => setOfCompanies.add(i))
 // console.log(setOfCompanies)
 
-// const languages = [
-//     'English',
-//     'Finnish',
-//     'English',
-//     'French',
-//     'Spanish',
-//     'English',
-//     'French',
-//   ]
-//   const langSet = new Set(languages)
-//   console.log(langSet) 
-//   console.log(langSet.size) 
+const languages = [
+    'English',
+    'Finnish',
+    'English',
+    'French',
+    'Spanish',
+    'English',
+    'French',
+  ]
+  const langSet = new Set(languages)
+  console.log(langSet) 
+  console.log(langSet.size) 
   
-//   const counts = []
-//   const count = {}
+  const counts = []
+  const count = {}
   
-//   for (const l of langSet) {
-//     const filteredLang = languages.filter((lng) => lng === l)
-//     console.log(filteredLang) 
-//     counts.push({ language: l, count: filteredLang.length })
-//   }
-//   console.log(counts)   
+  for (const l of langSet) {
+    const filteredLang = languages.filter((lng) => lng === l)
+    console.log(filteredLang) 
+    counts.push({ language: l, count: filteredLang.length })
+  }
+  console.log(counts)   
 
 
 
