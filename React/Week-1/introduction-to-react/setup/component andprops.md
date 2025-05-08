@@ -76,10 +76,62 @@ const App = () => {
   return (
     <div>
       <h1>Welcome to My React App!</h1>
-      <Button /> {/* Using the normal button component */}
+      <Button /> 
     </div>
   );
 };
 
 export default App;
  ```
+
+### 💡 What Are Props in React?
+- Props (short for properties) are used to pass data from a parent component to a child component in React.
+
+They allow you to:
+
+- Reuse the same component with different data
+
+- Make components more dynamic and maintainable
+
+- Keep your app modular and clean
+
+```
+const Welcome = (props) => {
+  return <h2>Welcome, {props.name}!</h2>;
+};
+
+export default Welcome;
+```
+```
+import Welcome from './components/Welcome';
+
+function App() {
+  return (
+    <div>
+      <Welcome name="there" />
+      <Welcome name="developers" />
+    </div>
+  );
+}
+
+export default App;
+```
+## Destructuring Props (Cleaner Syntax)
+Instead of writing props.name, you can write this:
+```
+const Welcome = ({ name, country }) => {
+  return <h2>Hello, {name} from {country}</h2>;
+};
+```
+Now you don’t need to write props. every time.
+```
+// App.jsx
+import Welcome from './Welcome';
+
+function App() {
+  return <Welcome name="Mieraf" country="Ethiopia" />;
+}
+```
+exercise 
+
+1. work animalcard component that pass image and title as props.
