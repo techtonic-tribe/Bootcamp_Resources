@@ -3,6 +3,7 @@ import Counter from './components/Counter';
 import FormHandler from './components/FormHandler';
 import EventDemo from './components/EventDemo';
 import ToggleButton from './components/ToggleButton';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <ToggleButton/>
       <hr />
       <Counter />
+      <hr />
+      <TodoList/>
       <hr />
       <FormHandler />
       <hr />
