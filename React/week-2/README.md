@@ -64,7 +64,9 @@ Use state for:
 
 ---
 
-# ---- Toggele button live coding ----
+## ❓ A component with a button to show/hide a message (basic toggle logic)?
+
+
 
 ### ❌ Anti-Patterns to Avoid
 
@@ -285,9 +287,10 @@ const handleInput = (e) => {
   e.preventDefault(); // Prevents default behavior (useful in forms)
 };
 ```
-# ----- Array state  live coding ----
 
 ---
+## ❓  Array state: add items to a todo list 
+
 
 ## ⚠️ Common Pitfalls
 
