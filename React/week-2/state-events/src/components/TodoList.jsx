@@ -6,7 +6,7 @@ function TodoList() {
 
   const addItem = () => {
     setItems(prevItems => [...prevItems, input]);
-    //[...prevItems, input]: The spread operator (...) creates a new array containing all elements of prevItems, followed by the new input value at the end.
+//[...prevItems, input]: The spread operator (...) creates a new array containing all elements of prevItems, followed by the new input value at the end.
     setInput('');
   };
 
