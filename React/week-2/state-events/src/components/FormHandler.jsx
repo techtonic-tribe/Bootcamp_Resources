@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 function FormHandler() {
   const [form, setForm] = useState({ name: '', email: '', gender: '' });
 
-  const handleChange = e => {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = t => {
+    setForm(prev => ({ ...prev, [t.target.name]: t.target.value }));
   };
 
   const handleSubmit = e => {
@@ -15,6 +15,7 @@ function FormHandler() {
   return (
     <div>
       <h2>Controlled Form</h2>
+
       <form onSubmit={handleSubmit}>
         <input name="name" value={form.name} onChange={handleChange} placeholder="Name" /><br />
         <input name="email" value={form.email} onChange={handleChange} placeholder="Email" /><br />
@@ -25,6 +26,7 @@ function FormHandler() {
         </select><br />
         <button type="submit">Submit</button>
       </form>
+
     </div>
   );
 }
