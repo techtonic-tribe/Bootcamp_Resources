@@ -285,47 +285,7 @@ const handleInput = (e) => {
   e.preventDefault(); // Prevents default behavior (useful in forms)
 };
 ```
-
----
-
-## 🧪 Practical Examples
-
-### ✅ Counter
-
-```js
-const [count, setCount] = useState(0);
-
-return (
-  <>
-    <h2>{count}</h2>
-    <button onClick={() => setCount(prev => prev + 1)}>+</button>
-    <button onClick={() => setCount(prev => prev - 1)}>-</button>
-  </>
-);
-```
-
----
-
-### ✅ Simple Form with Live Preview
-
-```js
-const [form, setForm] = useState({ name: '', email: '', password: '' });
-
-function handleChange(e) {
-  const { name, value } = e.target;
-  setForm(prev => ({ ...prev, [name]: value }));
-}
-
-return (
-  <form>
-    <input name="name" onChange={handleChange} />
-    <input name="email" onChange={handleChange} />
-    <input name="password" onChange={handleChange} />
-    <h3>Preview:</h3>
-    <p>{form.name} | {form.email}</p>
-  </form>
-);
-```
+# ----- Array state  live coding ----
 
 ---
 
