@@ -141,7 +141,7 @@ export default function Board() {
 
 ---
 
-## 🧾 Part 1 Recap – What You Mastered Like a Boss
+## 🧾 Part 1 Recap 
 
 | ✅ Step | 🔍 What You Did                   | 💥 Why It Matters                                  |
 | ------ | --------------------------------- | -------------------------------------------------- |
@@ -153,14 +153,6 @@ export default function Board() {
 | 6      | Renamed to `Board`                | Clean structure = happy code life 🧼               |
 
 ---
-
-### 🔜 Coming Next in Part 2:
-
-> *“Give those buttons some brains!”* 🧠
-
-* Make each square a **reusable component**
-* Pass different text to them with **props**
-* Make them interactive with **state (`useState`)**
 
 
 ---
@@ -260,15 +252,6 @@ function Square({ value }) {
 }
 ```
 
----
-
-## ❓ Why curly braces?
-
-Because JSX mixes JavaScript and HTML. Curly braces tell React “escape HTML mode, run this JavaScript!”
-
-Without `{}`, React treats the word as a string. With `{}`, it’s a variable.
-
----
 
 ## 🥳 Step 4: Pass different values from the Board
 
@@ -317,14 +300,6 @@ Every `Square` is the same component, but each one gets a different `value` prop
 
 ---
 
-## 💡 React Tip:
-
-Props are how **parents communicate with children** in React.
-
-Think of it like a **mailman delivering letters** — each letter (prop) tells a child what to do or display.
-
----
-
 ## 🎯 Code Recap (Final working version)
 
 ```jsx
@@ -363,19 +338,14 @@ export default function Board() {
 * Passing **props** to customize components
 * How to use `{}` in JSX for JavaScript expressions
 
-Ready for **Part 3**?
-
-> Making the squares **interactive** with `useState` so players can click and toggle X or O!
-
-Great! You're now entering the **interactive** phase of your Tic-Tac-Toe game by adding the ability to respond to **clicks**. Let's turn this into **Part 3** of your student-friendly React notes:
 
 ---
 
-# 🎮 React Tic-Tac-Toe – Part 3: Handling Clicks (User Interaction)
+#  React Tic-Tac-Toe – Part 3: Handling Clicks (User Interaction)
 
 ---
 
-## 🧠 Goal:
+## Goal:
 
 We want each square to **respond** when a user clicks it.
 
@@ -485,26 +455,7 @@ We are **logging to the console**, but the UI doesn’t change yet. Don’t worr
 
 ---
 
-## 😄 Fun analogy
 
-React is like a pizza delivery app 🍕:
-
-* You **create the pizza** (`<button>`) in the kitchen (JSX).
-* React **delivers** it to the customer (DOM).
-* When the customer **clicks the pizza**, you trigger the "eating" function (`handleClick`).
-* But right now, they only *say* "Yum!" in the Console 😋
-
----
-
-## ✅ Summary
-
-* We added interactivity with `onClick`
-* Now every square responds when clicked
-* Next step: Make squares **change** their value on click (like "X" or "O") using **`useState`**
-
----
-
-Awesome! You're doing a great job guiding students through React, one square at a time 😄 Let's now prepare **Part 4** of your React Tic-Tac-Toe tutorial — **adding state** to make the squares show an `"X"` when clicked.
 
 ---
 
@@ -665,10 +616,6 @@ React notices that a state variable (`value`) has changed and **re-renders** tha
 
 ---
 
-Ready for **Part 5**? We’ll make the `"X"` and `"O"` alternate based on whose turn it is!
-
-Just say: **"Let’s do part 5!"** and I’ll guide you through it. 🧩
-Perfect — you’re now entering the **“Lifting State Up”** phase of your Tic-Tac-Toe tutorial. Let’s walk through this step in a clean, memorable way. This is Part 5 of your journey: **Centralizing the game’s state in the `Board` component**.
 
 ---
 
@@ -881,26 +828,6 @@ Let’s handle both in **Part 7**!
 
 ---
 
-### 🎯 Next Step – Part 7 Preview: Alternating Between “X” and “O”
-
-In Part 7, you’ll:
-
-1. Add a `xIsNext` state variable to track the current player
-2. Update `handleClick()` to use it:
-
-   * Place `"X"` if `xIsNext` is true
-   * Place `"O"` if it’s false
-3. Flip the turn after each click
-
-You’ll also:
-
-* Prevent clicking the same square again
-* (Soon) Add winner logic
-
----
-
-Say “**Let’s do Part 7**” and I’ll walk you through that! You're doing great — just a couple more steps and you’ll have a full game!
-Certainly! Let's break down this function **line by line**, understand **what it does**, and explain **why it's written this way in React**.
 
 ---
 
@@ -913,73 +840,6 @@ function handleClick(i) {
   setSquares(nextSquares);
 }
 ```
-
----
-
-## 🔍 Line-by-Line Explanation
-
----
-
-### 🧠 `function handleClick(i) {`
-
-* This defines a function named `handleClick`.
-* It takes a parameter `i`, which represents **the index of the square that was clicked** (from 0 to 8, since there are 9 squares).
-
----
-
-### 📤 `const nextSquares = squares.slice();`
-
-* `squares` is a **state variable** from the `useState` hook in the `Board` component. It’s an array of 9 elements representing the game board.
-* `.slice()` creates a **shallow copy** of that array.
-
-Why do this?
-
-> 🔒 **Important React rule**: You should **never modify state directly**. Instead, **make a copy**, change the copy, and then update the state with the copy.
-
-If you did `squares[i] = 'X'`, you’d be **mutating state directly**, which could cause bugs or unpredictable behavior in React.
-
----
-
-### ✏️ `nextSquares[i] = 'X';`
-
-* This line sets the value of the `i`th square to `"X"` — meaning an `"X"` is placed in the clicked square.
-
-Right now it’s hardcoded to `'X'`, but in the next step (Part 7), you'll switch between `'X'` and `'O'`.
-
----
-
-### 🆕 `setSquares(nextSquares);`
-
-* This line **updates the state** by calling the `setSquares` function provided by `useState`.
-* It tells React: "Hey, update the `squares` state to use this new array (`nextSquares`)."
-
-What happens after this?
-
-> 🔁 React automatically re-renders the component (in this case, `Board`) so that the UI reflects the new state.
-
----
-
-## 🧩 Summary
-
-| Code                                   | What It Does                                       |
-| -------------------------------------- | -------------------------------------------------- |
-| `function handleClick(i)`              | Defines a function to run when a square is clicked |
-| `const nextSquares = squares.slice();` | Creates a copy of the current game state           |
-| `nextSquares[i] = 'X';`                | Places an 'X' in the clicked square                |
-| `setSquares(nextSquares);`             | Updates the game state with the modified copy      |
-
----
-
-### ✅ Result
-
-When you click a square, that square updates to show `'X'`, and the board rerenders to reflect the change.
-
----
-
-Would you like me to show this with a visual or flow diagram too? Or move on to adding `'O'` and switching turns (Part 7)?
-Absolutely! Let’s dive into **🎯 Part 7 of your React Tic-Tac-Toe tutorial** — and this one is all about **alternating turns** and **preventing overwrites**. 🌀
-
----
 
 # 🎮 Part 7: Taking Turns & Preventing Overwrites
 
@@ -1132,16 +992,6 @@ You now have:
 
 ---
 
-### 🚀 Next: Part 8 – Declaring a Winner!
-
-In the next part, you’ll:
-
-* Add winner detection logic
-* Prevent moves once the game is over
-* Show the winner at the top
-
-Say **“Let’s do Part 8”** and I’ll guide you through it!
-Got it! You’re on the home stretch! 🏁
 
 ---
 
@@ -1248,24 +1098,3 @@ function calculateWinner(squares) {
 * If a winner is found, the game **stops accepting clicks** (`handleClick` returns early).
 * The **status** shows either the winner or who’s next.
 * State updates trigger a re-render, updating the UI automatically.
-
----
-
-## 🎯 What you achieved:
-
-* ✅ Squares toggle between X and O each turn
-* ✅ Moves can’t be made on filled squares
-* ✅ Game detects a winner correctly
-* ✅ Game stops after a win
-* ✅ Status displays winner or next player info
-
----
-
-If you want, I can help you next with:
-
-* Adding a **restart button** to reset the game
-* Showing **move history** (time travel!)
-* Highlighting winning squares
-* Or anything else you want to build on top
-
-Just say the word! 🚀
