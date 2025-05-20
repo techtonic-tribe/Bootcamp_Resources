@@ -306,6 +306,109 @@ Memoizes a function.
 
 ---
 
+
+## 🧪 Exercise 1: Basic useEffect Behavior
+
+**❓ What will this component log to the console when it first renders?**
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function HelloWorld() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('useEffect called');
+  });
+
+  console.log('rendering...');
+
+  return <button onClick={() => setCount(count + 1)}>Click Me</button>;
+}
+```
+
+### ✅ Answer:
+
+On the **initial render**, this will log:
+
+```
+rendering...
+useEffect called
+```
+
+* `console.log('rendering...')` runs **during** render phase.
+* `useEffect` runs **after** the component mounts and the DOM is painted.
+
+If you click the button, it will log both again — because `useEffect` has **no dependency array**, it runs after **every render**.
+
+---
+
+## 🧪 Exercise 2: Dependency Control
+
+**❓ How many times does the `useEffect` below run if the user clicks the button 5 times?**
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('Effect ran');
+  }, [count]);
+
+  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+}
+```
+
+### ✅ Answer:
+
+* `useEffect` runs **on initial mount** (when `count` is `0`)
+* Then it runs **every time `count` changes**
+
+👆 So if you click the button 5 times, `useEffect` runs a total of **6 times** (1 initial + 5 updates).
+
+---
+
+## 🧪 Exercise 3: Static vs Dynamic Dependencies
+
+**❓ What will this log if the `name` prop doesn’t change, but the button is clicked multiple times?**
+
+```jsx
+function Greet({ name }) {
+  const [clicks, setClicks] = useState(0);
+
+  useEffect(() => {
+    console.log(`Hello, ${name}`);
+  }, [name]);
+
+  return (
+    <div>
+      <button onClick={() => setClicks(clicks + 1)}>
+        Clicked {clicks} times
+      </button>
+    </div>
+  );
+}
+```
+
+### ✅ Answer:
+
+If the `name` prop never changes:
+
+* `useEffect` runs **only once** on mount.
+* Clicking the button changes state, causes re-renders, but `name` remains unchanged → effect does **not run again**.
+
+✅ So you'll see:
+
+```
+Hello, [name]
+```
+
+→ **logged once**, even if the button is clicked multiple times.
+
+---
+
 ## 🧩 Closing Thoughts
 - `useEffect` is powerful but easy to misuse.
 - Avoid cramming too much logic inside effects.
