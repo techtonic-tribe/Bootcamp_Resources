@@ -1,14 +1,27 @@
-import { useEffect } from 'react';
+
+
+
+import React, { useState } from 'react';
+import UserProfile from './UserProfile';
 
 function App() {
+  const [showProfile, setShowProfile] = useState(true);
+  const [userId, setUserId] = useState(1);
 
-  console.log('Rendering...');
+  return (
+    <div>
+      <button onClick={() => setShowProfile(prev => !prev)}>
+        {showProfile ? 'Hide' : 'Show'} Profile
+      </button>
 
-  useEffect(() => {
-    console.log('useEffect called!');
-  }, );
+      <button onClick={() => setUserId(id => id + 1)}>
+        Next User
+      </button>
 
-  return <div></div>;
+      {showProfile && <UserProfile userId={userId} />}
+
+    </div>
+  );
 }
 
-export default App
+export default App;
