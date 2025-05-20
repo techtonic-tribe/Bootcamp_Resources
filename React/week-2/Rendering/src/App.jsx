@@ -22,7 +22,7 @@ export default App
 
 //   return (
 //     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-//       <h1>🎯 React Rendering Demo</h1>
+//       <h1>React Rendering Demo</h1>
 
 //       {/* 1. Initial + Conditional Rendering */}
 //       <h2>{isLoggedIn ? 'Welcome back, User!' : 'Please log in'}</h2>
