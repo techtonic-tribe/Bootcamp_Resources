@@ -1,3 +1,91 @@
+## 1
+## 2
+## 3
+## 4
+## 5 Managing Multiple Inputs
+
+```
+import { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Submitted: ${JSON.stringify(form, null, 2)}`);
+  };
+
+  return (
+    <main className="form-demo">
+      <h1>Profile Settings</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username
+          <input
+            name="username"
+            value={form.username}
+            onChange={handleChange}
+            placeholder="jane_doe"
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="jane@example.com"
+          />
+        </label>
+
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={handleChange}
+            placeholder="••••••••"
+          />
+        </label>
+
+        <button type="submit">Save changes</button>
+      </form>
+
+      <section className="preview">
+        <h2>Live Preview</h2>
+        <ul>
+          <li>Username: {form.username || "—"}</li>
+          <li>Email: {form.email || "—"}</li>
+          <li>Password: {form.password ? "••••••••" : "—"}</li>
+        </ul>
+      </section>
+    </main>
+  );
+}
+
+export default App;
+
+```
+
+## 6 Form Validation
+
+```
 import { useState } from "react";
 import "./App.css";
 
@@ -139,3 +227,5 @@ function App() {
 }
 
 export default App;
+
+```
