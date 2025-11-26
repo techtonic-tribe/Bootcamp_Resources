@@ -17,6 +17,8 @@ function App() {
     password: false,
     username: false,
   });
+  const [status, setStatus] = useState({ state: "idle", message: "" });
+  const [user, setUser] = useState(null);
 
   const validateField = (name, value) => {
     switch (name) {
@@ -57,7 +59,21 @@ function App() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const login = ({ email, password }) =>
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (email.endsWith("@gmail.com") && password === "supersecret") {
+          const sessionId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+          resolve({ id: sessionId, email });
+        } else {
+          reject(new Error("Invalid credentials"));
+        }
+      }, 800);
+    });
+
+    
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const nextErrors = validateAll(form);
     setErrors(nextErrors);
@@ -72,7 +88,16 @@ function App() {
       return;
     }
 
-    alert(`Submitted: ${JSON.stringify(form, null, 2)}`);
+    setStatus({ state: "loading", message: "Signing you in..." });
+
+    try {
+      const profile = await login(form);
+      setUser({ username: form.username, email: profile.email });
+      setStatus({ state: "success", message: "Redirecting to dashboard..." });
+    } catch (error) {
+      setUser(null);
+      setStatus({ state: "error", message: error.message });
+    }
   };
 
   return (
@@ -123,7 +148,9 @@ function App() {
           )}
         </label>
 
-        <button type="submit">Save changes</button>
+        <button type="submit" disabled={status.state === "loading"}>
+          {status.state === "loading" ? "Submitting..." : "Save changes"}
+        </button>
       </form>
 
       <section className="preview">
@@ -133,6 +160,17 @@ function App() {
           <li>Email: {form.email || "—"}</li>
           <li>Password: {form.password ? "••••••••" : "—"}</li>
         </ul>
+      </section>
+
+      <section className="status-panel">
+        <h2>Login Status</h2>
+        {status.state !== "idle" && <p data-status={status.state}>{status.message}</p>}
+        {user && (
+          <div className="session-card">
+            <p>Signed in as {user.username}</p>
+            <p>Session email: {user.email}</p>
+          </div>
+        )}
       </section>
     </main>
   );
