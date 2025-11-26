@@ -1,64 +1,26 @@
 ## 1 Event Handling
 
 ```
-
 import { useState } from "react";
 
 function App() {
   const [clicks, setClicks] = useState(0);
   const [name, setName] = useState("");
-  const [logs, setLogs] = useState([]);
-
-  const handleButtonClick = () => {
-    setClicks((count) => count + 1);
-    setLogs((entries) => [
-      `Button clicked (${new Date().toLocaleTimeString()})`,
-      ...entries,
-    ]);
-  };
-
-  const handleInputChange = (event) => {
-    setName(event.target.value);
-    setLogs((entries) => [
-      `Typing: ${event.target.value}`,
-      ...entries,
-    ]);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setLogs((entries) => [`Form submitted with name: ${name}`, ...entries]);
-  };
 
   return (
-    <main className="event-demo">
-      <h1>Event Handling Demo</h1>
-
-      <button type="button" onClick={handleButtonClick}>
-        Tap me ({clicks})
+    <div>
+      <button onClick={() => setClicks(clicks + 1)}>
+        Clicked {clicks} times
       </button>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Your name
-          <input
-            value={name}
-            onChange={handleInputChange}
-            placeholder="Start typing..."
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+      <input
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        placeholder="Type your name"
+      />
 
-      <section>
-        <h2>Event log</h2>
-        <ul>
-          {logs.map((entry, index) => (
-            <li key={index}>{entry}</li>
-          ))}
-        </ul>
-      </section>
-    </main>
+      <p>Hello, {name || "stranger"}!</p>
+    </div>
   );
 }
 
@@ -70,6 +32,8 @@ export default App;
 ## 2 Synthetic Event System
 
 ```
+
+
 import { useState } from "react";
 
 const formatSnapshot = (snapshot) => JSON.stringify(snapshot, null, 2);

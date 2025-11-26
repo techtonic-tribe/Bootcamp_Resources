@@ -370,10 +370,3 @@ function handleLogin() {
 Why is React state a better place to store form data than local component variables?
 
 ---
-
-If you want, I can also break down:
-🔥 “SyntheticEvent vs Native Event”
-🔥 “Controlled vs Uncontrolled Components”
-🔥 “Advanced Form Patterns with custom hooks”
-
-Just say **“expand it more”** and I’ll go deeper.
