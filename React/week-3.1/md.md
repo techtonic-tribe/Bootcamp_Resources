@@ -108,10 +108,12 @@ React basically says:
 ### 🎯 Example: Controlled Input
 
 ```jsx
-function ControlledInput() {
-  const [name, setName] = React.useState("");
+function App() {
+  const [name, setName] = useState("");
 
   return (
+    <>
+
     <div>
       <input 
         value={name}
@@ -120,6 +122,8 @@ function ControlledInput() {
       />
       <p>Your name: {name}</p>
     </div>
+
+    </>
   );
 }
 ```
