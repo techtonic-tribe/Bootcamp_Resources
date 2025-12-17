@@ -328,9 +328,9 @@ You can link a Google Font in your HTML and then tell Tailwind to use it.
 
 ```
 
----
 
-### 4. Comparison: Default vs. Extended vs. Overriding
+
+# #4. Comparison: Default vs. Extended vs. Overriding
 
 It is vital for students to understand **how** Tailwind treats these values.
 
@@ -401,48 +401,4 @@ function ProductCard() {
 
 1. If you apply `text-center md:text-left`, what is the alignment on a 1200px screen?
 2. What does "Mobile-First" mean in the context of CSS media queries?
-
----
-
-## Chapter 4: Modern Component Libraries (Shadcn/UI & DaisyUI)
-
-Writing every utility class manually can be repetitive. Component libraries provide pre-made patterns.
-
-### 1. DaisyUI (The Plugin Approach)
-
-DaisyUI is a Tailwind plugin. It gives you "component classes" like `btn` or `card`.
-
-* **Install:** `npm i -D daisyui`
-* **Usage:** `<button className="btn btn-primary">Button</button>`
-
-### 2. Shadcn/UI (The Copy-Paste Approach)
-
-Shadcn is not an npm package. It is a collection of re-usable components that you **own**. You use a CLI to add components directly into your `src/components/ui` folder.
-
-* **Install:** `npx shadcn-ui@latest init`
-* **Add Component:** `npx shadcn-ui@latest add button`
-
-#### Chapter 4 Questions:
-
-1. Why is Shadcn/UI considered "better" for long-term customization than traditional libraries?
-2. Which library requires you to add a plugin to your `tailwind.config.js`?
-
----
-
-## Resources: Where to find React Components
-
-| Library Name | Website Address | Integration Method |
-| --- | --- | --- |
-| **Tailwind UI** | [tailwindui.com](https://tailwindui.com) | Copy/Paste JSX snippets (Official). |
-| **Shadcn/UI** | [ui.shadcn.com](https://ui.shadcn.com) | CLI tool (`npx shadcn-ui add ...`). |
-| **DaisyUI** | [daisyui.com](https://daisyui.com) | Tailwind CSS Plugin. |
-| **Flowbite** | [flowbite-react.com](https://flowbite-react.com) | NPM Package + Tailwind Plugin. |
-| **HyperUI** | [hyperui.dev](https://www.hyperui.dev) | Free Open Source snippets. |
-| **Radix UI** | [radix-ui.com](https://www.radix-ui.com) | Primitive hooks for Shadcn/UI. |
-
-### How to use them in your project:
-
-1. **For Snippets (HyperUI/TailwindUI):** Copy the code block and paste it directly into your React component.
-2. **For Plugins (DaisyUI):** Install via NPM and add to the `plugins: []` array in `tailwind.config.js`.
-3. **For CLI (Shadcn):** Run the init command once, then use the `add` command whenever you need a new UI element like a Modal or Tabs.
 
