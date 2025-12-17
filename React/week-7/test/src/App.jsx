@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ProfileCard from './ProfileCard'
 import Hero from './hero'
+import BrandCard from './BrandCard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,8 @@ function App() {
   return (
     <>
     {/* <ProfileCard /> */}
-    {/* <Hero /> */}
+    <Hero />
+    <BrandCard />
     </>
   )
 }
