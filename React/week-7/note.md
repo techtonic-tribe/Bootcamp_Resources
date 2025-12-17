@@ -35,7 +35,6 @@ In React, we build **Components**.
 2. **Explain the "Plateau" effect:** Why does a Tailwind CSS file stop growing even as your project gets much larger?
 3. **Analogy Check:** If Traditional CSS is a "Custom Tailored Suit," what would be the "Tailwind" equivalent in the world of clothing?
 
----
 
 ## React Component Libraries & Resources (2025)
 
@@ -44,6 +43,7 @@ Here is a list of the most popular places to get pre-made React components that 
 | Library | Address | Description | How to Use |
 | --- | --- | --- | --- |
 | **Shadcn/UI** | [ui.shadcn.com](https://ui.shadcn.com) | The industry standard. High-quality, accessible components. | Use the CLI: `npx shadcn-ui@latest add [component]` |
+| **React** | [nextui.org](https://nextui.org) | Focuses on dark mode and beautiful, fluid animations. | Install via NPM; uses a `NextUIProvider` to wrap your app. |
 | **DaisyUI** | [daisyui.com](https://daisyui.com) | Adds component classes like `.btn` and `.card` to Tailwind. | Install via NPM and add as a plugin in `tailwind.config.js`. |
 | **Flowbite** | [flowbite-react.com](https://flowbite-react.com) | Large library of interactive components (tabs, modals, etc). | Install `flowbite-react` via NPM; import components like standard React props. |
 | **HyperUI** | [hyperui.dev](https://www.hyperui.dev) | Free, open-source "copy-paste" snippets for marketing and e-commerce. | **Zero Install.** Just find the component and copy the code into your JSX. |
