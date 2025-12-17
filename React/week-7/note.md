@@ -67,7 +67,7 @@ Here is a list of the most popular places to get pre-made React components that 
 
 
 
-## # 2: Tailwind CSS Setup & Integration (Vite + React)
+##  2: Tailwind CSS Setup & Integration (Vite + React)
 
 In 2025, the industry standard for starting a React project is **Vite**. It is significantly faster than the older "Create React App" (CRA). Similarly, **Tailwind CSS v4** has simplified the installation process, removing much of the "boilerplate" code required in earlier versions.
 
